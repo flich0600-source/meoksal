@@ -698,7 +698,7 @@ function switchTab(id) {
   if (tab) tab.classList.add('active');
   const btn = document.querySelector('.tab-btn[data-tab="' + id + '"]');
   if (btn) btn.classList.add('active');
-  tab && tab.querySelectorAll('.fade-in').forEach(el => { el.classList.remove('visible'); void el.offsetWidth; observer.observe(el); });
+  tab && tab.querySelectorAll('.fade-in').forEach(el => { el.classList.add('visible'); });
   tab && tab.querySelectorAll('.qa-card.fade-in-qa').forEach(el => { el.classList.remove('visible'); void el.offsetWidth; qaObserver.observe(el); });
   tab && tab.querySelectorAll('.stat-pill .num').forEach(el => { el._counted = false; statObserver.observe(el); });
   tab && tab.querySelectorAll('.timeline').forEach(tl => { tl._pulsed = false; tlObserver.observe(tl); });
